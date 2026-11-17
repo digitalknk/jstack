@@ -3,61 +3,67 @@ name: the-algorithm
 description: Simplify before building or automating, using the five-step algorithm from Tesla and SpaceX (question requirements, delete, simplify, speed up, automate last). Use before automating a workflow (cron jobs, CI pipelines, n8n or Zapier flows, scripts, agents), when planning a new feature, tool, or system, when auditing a bloated process, codebase, or tool stack, and when a workflow keeps breaking or slowing down. Not for small, well-scoped tasks like fixing a bug, formatting data, or a one-off query.
 license: MIT
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # The Algorithm
 
-Five steps, in order. Each step only pays off if the one before it is done. The most expensive mistake is running them backwards: automating a process, then speeding it up, then polishing it, without ever asking whether it should exist.
+Run the five steps in order. Each one only pays off once the one before it is done. The framework came from post-mortems on costly mistakes at Tesla and SpaceX, where the classic failure was automating a broken process. Agents make that mistake by default: asked for a workflow, they build the automation around whatever requirements they were handed.
 
-Agents lean hard toward step 5. Asked for a workflow, they build the automation around whatever requirements they were handed. This skill is the brake.
+Scale the effort to the task. A small script needs a few sentences of thought; a new system or an audit needs the full walk.
 
-The framework comes from post-mortems on costly mistakes at Tesla and SpaceX, where the classic failure was automating broken processes too early. Jon McNeill teaches it as a journey in simplification.
+## Steps
 
-## 1. Question every requirement
+```text
+- [ ] 1. Question every requirement
+- [ ] 2. Delete steps and parts
+- [ ] 3. Simplify and optimize what's left
+- [ ] 4. Speed it up
+- [ ] 5. Automate last
+```
 
-Every requirement needs a reason and an owner who can explain it. "Standard practice," "we've always done it," and "the template has it" are not reasons. A requirement from a smart or senior source deserves the same question; those are the ones people stop checking.
+### 1. Question every requirement
 
-- For each requirement, write the reason in one line. If you can't, it is a candidate to cut.
-- Look hardest at defaults inherited from a tool, framework, template, or industry habit. Ask what the result would look like if the default were wrong. A 12-page document might be one paragraph. A paid platform might be a spreadsheet.
-- Requirements the user stated in this conversation are theirs. Question them out loud with a recommendation; never drop them silently.
-- Legal, safety, security, and accessibility requirements stay. You can still simplify how they are met.
+Every requirement needs a one-line reason and an owner who could defend it. "Standard practice," "the template has it," and "we've always done it" are not reasons. Requirements from smart or senior sources get the same question; those are the ones nobody checks.
 
-## 2. Delete steps and parts
+Look hardest at defaults inherited from a tool, framework, template, or industry habit, and ask what the result would be if the default were wrong. A 12-page document might be one paragraph. A paid platform might be a spreadsheet.
 
-Map the process end to end as discrete steps. Then mark the steps the customer or end user actually pays for or would notice if missing. Internal documents, handoffs, status syncs, duplicate checks, approval layers, and wrapper abstractions usually fail that test.
+### 2. Delete steps and parts
 
-- Build the new process around the marked steps and delete the rest.
-- In code, this means dead paths, unused config, abstractions with one caller, dependencies that do one small thing, and services that only relay.
-- Delete more than feels comfortable. If nothing ever has to be added back, you didn't delete enough. Adding a step back is cheap; carrying a useless one forever is not.
+Map the process end to end as discrete steps, then mark the ones the customer or end user pays for or would miss. Build around the marked steps and delete the rest. Internal documents, handoffs, status syncs, duplicate checks, approval layers, single-caller abstractions, and services that only relay usually go.
 
-## 3. Simplify and optimize what's left
+Delete more than feels comfortable. If nothing ever has to be added back, you didn't delete enough.
 
-Only now make the remaining steps better. Optimizing a step that should have been deleted is the most common waste in engineering.
+### 3. Simplify and optimize what's left
 
-- Run the simplified process by hand before building tooling for it. For an agent that means doing the task directly once: run the commands in the shell, process a real sample, make the change by hand, and check the result is exactly right.
-- Fix what's awkward while it's still cheap to change. No pipelines, schedulers, webhooks, or frameworks in this step.
+Run the simplified process by hand once before building any tooling: run the commands in a shell, process a real sample, make the change directly, and check the output is exactly right. Fix what's awkward while it is still cheap to change.
 
-## 4. Speed it up
+### 4. Speed it up
 
-Speed is the great revealer. Run the process faster and at higher volume and watch where it breaks, stalls, or drops in quality.
+Speed is the great revealer. Run the process faster and at higher volume with real inputs (the full dataset, ten runs instead of one, the large file, the slow network) and watch where it breaks, stalls, or loses quality. Fix each cause. If one cycle takes days, getting it to minutes is part of this step.
 
-- Use real inputs and more of them: the full dataset instead of a sample, ten runs instead of one, the slow network, the large file.
-- Fix the cause of each failure. Don't wrap it in retries, timeouts, and fallbacks that hide it.
-- Keep the loop short. If one cycle takes days, finding a way to make it take minutes is part of this step.
+### 5. Automate last
 
-## 5. Automate last
+Automate the proven steps and only those. Keep it small, readable, and easy to delete. If the automation needs many special cases, go back to step 2.
 
-Automate only once the process is simple, correct, and holding up at speed. Then automate the proven steps, and only those.
+## Gotchas
 
-- Keep the automation small, readable, and easy to delete. It will need weeding when requirements change.
-- If the automation needs many special cases, go back to step 2. The process isn't simple yet.
+- **Questioning is not dropping.** A requirement the user stated in this conversation is theirs. Challenge it out loud with a recommendation; never drop it silently. Legal, safety, security, and accessibility requirements stay, though how they're met can get simpler.
+- **Don't reopen settled decisions.** If the user already decided how something should work, build that and apply the algorithm only to what's still open. "Do it by hand first" means proving the process once, not shipping the manual version in place of the planned one.
+- **Deleting means deleting.** Commenting code out, hiding it behind a feature flag, or keeping a "legacy" path is not deletion. Version control is the backup.
+- **Don't optimize before deleting.** Caching, parallelism, batching, and faster tools applied to a step that should not exist are the most common waste. Finish step 2 first.
+- **Don't hide failures found at speed.** Retries, longer timeouts, broad try/except, and fallbacks that mask a failure undo step 4. Fix the cause, then add a retry only where the failure is genuinely external and transient.
+- **Scaffolding is automation.** A scheduler, CI pipeline, webhook, queue, or framework set up "for later" during steps 1 to 3 is step 5 done early.
+- **Know whose call it is.** Cutting, deleting, and simplifying inside the task is yours: do it and report it. Cutting a stated requirement, changing what the product does, removing something you don't own (shared config, other people's code, production data), or anything costly to reverse goes to the user first.
 
-## How to apply it
+## Report
 
-Scale the effort to the task. A small script needs a few sentences of thought; a new system or an audit of an old one needs the full walk.
+Use this shape. Omit any section where you found nothing.
 
-- Make the technical calls yourself: what to cut, delete, simplify, and how to test at speed. Act on them and report what you removed and why.
-- Come back to the user only for calls that are theirs: cutting a requirement they stated, changing what the product does, removing something they own, or anything costly to reverse.
-- If the user already decided how something should work, build that. Use the algorithm on the parts that are still open, not to reopen settled decisions or to justify a stopgap. "Do it by hand first" means proving the process once, not shipping the manual version instead of the planned one.
-- Report briefly: what you cut and why, the process that's left, what broke at speed and how you fixed it, and what you automated. Leave out any step where you found nothing.
+```markdown
+**Cut:** requirement or part, and the one-line reason it went
+**Process now:** the remaining steps, one line each
+**Broke at speed:** what failed under volume or speed, and the fix
+**Automated:** what, and how to remove it
+**Needs you:** cuts that are the user's call, each with a recommendation
+```

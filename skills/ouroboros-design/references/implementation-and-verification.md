@@ -28,11 +28,7 @@ Use one component and token system. Do not mix official design systems or icon f
 
 ## Banned font check
 
-Models fall back to their favorite fonts without being asked. Before calling any interface work done, search the changed code, CSS, font imports, and config:
-
-```bash
-grep -rniE "instrument[ _-]?serif|space[ _-]?grotesk" --include=*.{css,scss,html,js,jsx,ts,tsx,vue,svelte,json,mjs,cjs} . | grep -v node_modules
-```
+Models fall back to their favorite fonts without being asked. `scripts/check-patterns.sh` searches code, CSS, font imports, and config for them.
 
 Any match is a failure unless the user named that font in the current brief or the existing brand already uses it. Replace it with a face chosen for the subject, and check what the fallback stack renders.
 
@@ -82,9 +78,9 @@ Look for:
 - Weak or competing hierarchy
 - Accidental overflow, clipping, wrapping, and layout shift
 - Repeated cards, labels, borders, or section rhythms without meaning
-- Any pill or capsule shape, including tags, badges, chips, and fully rounded buttons. Search the code for `rounded-full`, `9999px`, `999px`, and `border-radius: 50vh` on non-circular elements
-- Colored stripes on one edge of a box, wide-tracked uppercase text, dot status badges, and mood glows. Search the code for `border-left` with a color and `uppercase` with `letter-spacing` or `tracking-`
-- Every gradient. Search for `linear-gradient`, `radial-gradient`, `conic-gradient`, and `bg-gradient-`, and state in one sentence what each one communicates. Remove any that has no answer, and move any text that sits on one onto a solid surface
+- Everything `scripts/check-patterns.sh` flags. The script finds candidates; the render decides. A `rounded-full` on a round avatar is fine, a capsule badge is not
+- Every gradient: state in one sentence what it communicates. Remove any that has no answer, and move any text that sits on one onto a solid surface
+- Dot status badges and mood glows, which the script can't reliably find
 - Every shader or WebGL canvas: one per view at most, a stated reason, no text on it, a still frame under reduced motion, paused off screen, a fallback without WebGL, and smooth on a low-end phone
 - Empty areas large enough to notice on their own: oversized section gaps, mostly blank first screens or panels, and small content floating in wide margins
 - Inconsistent spacing, radii, icon style, or action vocabulary

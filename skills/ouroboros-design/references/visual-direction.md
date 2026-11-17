@@ -58,8 +58,7 @@ Typography carries much of a page's identity. Define roles deliberately:
 
 - Use a display treatment only where scale or character supports hierarchy.
 - Keep body text readable at real line lengths and viewport sizes.
-- Use no more than three font sizes per interface: one display size, one body size, and one small size. Build hierarchy from color, spacing, position, and case before reaching for a fourth size or a heavier weight.
-- Avoid bold and black-weight text, especially in black or near-black. Use regular or medium weights and let size, color, and spacing carry emphasis. Reserve a heavier weight for the rare case where nothing else can signal importance.
+- With only three sizes and few heavy weights (see SKILL.md), build hierarchy from color, spacing, position, and case. Regular and medium weights do most of the work.
 - Let width, case, spacing, and line height do work before adding another family.
 - Check italic and decorative faces for clipped glyphs, missing weights, language coverage, and fallback behavior.
 - Use fonts already licensed and available in the product. If a new font is needed, state the source and loading strategy.

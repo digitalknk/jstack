@@ -127,7 +127,7 @@ Every structural or visual device must encode something real. Numbering implies 
 
 The existing stack and platform conventions win. Check dependencies before importing them. Do not replace a framework, component system, icon family, or styling approach for aesthetic convenience. If the product is built on an official design system, use its real components and tokens rather than an imitation.
 
-Keep behavior complete and testable. Use semantic structure, native controls where appropriate, keyboard access, visible focus, screen-reader labels, responsive layouts, reduced-motion handling, clear validation, and recoverable failures. Make content and user state survive errors where practical.
+Keep behavior complete and testable, and make content and user state survive errors where practical.
 
 ### 7. Observe the result and close the loop
 
@@ -170,11 +170,11 @@ Provide enough detail to implement without inventing major decisions. Cover rele
 - Do not use eyebrow headings in generated interfaces. Omit kicker text, overlines, and small labels above page or section headings.
 - Do not use subheadings in generated interfaces. Omit subtitles, secondary headlines, and nested headings beneath page or section headings. Put necessary supporting information in ordinary body text.
 - Think about the human: they are in a rush. The primary action must be visible and usable on the first screen without extra clicks, and there is one primary action per view.
-- Never use Instrument Serif or Space Grotesk, and run the banned font check before finishing.
-- Stick to three font sizes per interface. Before finishing, list every distinct rendered font size and cut any beyond three. An existing product type scale wins when the task is preserving or evolving that product.
-- Avoid bold and black-weight text as much as possible, especially in black or near-black. Carry emphasis with size, color, and spacing instead. Before finishing, find every bold or heavier weight and remove each one that something else could replace.
+- Never use Instrument Serif or Space Grotesk.
+- Stick to three font sizes per interface: one display, one body, one small. An existing product type scale wins when the task is preserving or evolving that product.
+- Avoid bold and black-weight text as much as possible, especially in black or near-black. Carry emphasis with size, color, and spacing instead.
 - Never present a long list of options as a single page. Break settings, forms, and option sets into named sections or pages.
-- Nothing goes on the plate that isn't meant to be eaten. Every element, icon, stripe, glow, badge, label, border, and gap must carry part of the message. If removing it loses nothing the user needs, remove it. Before finishing, walk every element on the screen and justify it in one sentence or cut it.
+- Nothing goes on the plate that isn't meant to be eaten. Every element, icon, stripe, glow, badge, label, border, and gap must carry part of the message. If removing it loses nothing the user needs, remove it.
 - Do not fabricate content or evidence to make a design look finished.
 - Do not use aesthetic work as permission to rewrite product strategy, information architecture, or repository foundations outside the request.
 - Do not add motion without a communication purpose. Respect reduced-motion preferences.
@@ -182,8 +182,17 @@ Provide enough detail to implement without inventing major decisions. Cover rele
 - Never propose or build anything in [vetoed directions](references/vetoed.md) or the project's vetoed file, including disguised versions. Only the user can lift a veto, by asking for that exact thing in the current brief.
 - When the user rejects a direction, layout, motif, or interaction, record it as a veto before continuing, following the steps in [vetoed directions](references/vetoed.md).
 - When briefing a subagent or another model, paste the full vetoed lists into the brief. Do not rely on it finding the files.
-- Do not call a result complete after code checks alone. Inspect the rendered state when rendering is possible.
 
-## Definition of done
+## Before finishing
 
-The work is complete when the primary user and action are obvious, the visual direction belongs to the subject, the system is coherent, relevant states and recovery paths work, the interface is accessible across supported inputs and viewports, content is honest, implementation follows the product's architecture, and rendered verification has informed at least one critique pass.
+Run this list on the rendered interface, fix what fails, and run it again. Code checks alone don't count; if you can't render, say so.
+
+```text
+- [ ] Run `sh scripts/check-patterns.sh <project dir>` from this skill's folder. It flags banned fonts, pills, one-sided borders, tracked uppercase, gradients, shaders, heavy weights, and more than three font sizes. Fix each hit or state why it stays
+- [ ] The plate: justify every element, icon, border, and gap in one sentence, or cut it
+- [ ] Vetoes: compare the render with every entry in the vetoed lists, including disguised versions
+- [ ] One primary action per view, visible on the first screen
+- [ ] States: loading, empty, error, and destructive states render and recover
+- [ ] Access: keyboard, focus, screen reader, reduced motion, and narrow viewports work
+- [ ] Critique pass: answer the step 7 questions; if a template or typical AI-built site could have made this, it fails
+```

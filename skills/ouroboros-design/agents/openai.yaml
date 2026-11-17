@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ouroboros Design"
+  short_description: "Design distinctive, usable interfaces"
+  default_prompt: "Use $ouroboros-design to design and implement a distinctive, accessible interface for this brief."

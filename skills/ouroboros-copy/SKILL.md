@@ -39,6 +39,7 @@ Write copy a visitor can read once and act on. Every line should tell the reader
 - Do not fabricate testimonials, logos, metrics, claims, or capabilities.
 - Button labels and menu items say what will happen.
 - Keep captions to one or two short sentences.
+- Say only what the reader needs at that point on the page. Someone should understand the product without reading everything.
 - Never present sample content as a built-in part of the product.
 - Never propose or write anything in the vetoed list, including disguised versions.
 - When the user rejects a line, phrase, framing, or tone, record it as a veto before continuing, following the steps in [vetoed copy patterns](references/vetoed.md).

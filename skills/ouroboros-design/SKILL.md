@@ -83,6 +83,8 @@ Design posture:
 Signature idea:
 ```
 
+If nobody has said what the design must get across, ask before designing: the one idea it centers on, and what a visitor should leave knowing. Everything else branches from that answer.
+
 Show this read when the user asked for a plan, when the direction needs agreement, or when it explains a consequential assumption. Do not make the user read a design diary before seeing useful work.
 
 ### 3. Find a direction rooted in the subject
@@ -105,7 +107,7 @@ The dials are decision aids, not a required user-facing form. A high value is no
 
 Define the primary and secondary actions, navigation model, content hierarchy, input and output flow, state transitions, recovery paths, and authorization boundaries. Remove choices and elements that do not help the user's task.
 
-For marketing and landing pages, start from one central idea and let the page structure follow from it. Do not start from a list of sections such as hero, features, audience, and call to action. A section list produces the template. The page must still tell a visitor what the product is and why they would want it; the central idea has to carry that explanation, not replace it.
+For marketing and landing pages, start from one central idea and let the page structure follow from it. Do not start from a list of sections such as hero, features, audience, and call to action. A section list produces the template. The page must still tell a visitor what the product is and why they would want it; the central idea has to carry that explanation, not replace it. Pace everything after that: detail appears as the visitor goes looking for it, so the site feels explored rather than delivered.
 
 Use real content where available. Do not invent customer logos, testimonials, metrics, precision, product capabilities, legal claims, or technical facts. When content or imagery is missing, use clearly labeled sample data or placeholders and identify what the user must replace.
 
@@ -177,7 +179,7 @@ Provide enough detail to implement without inventing major decisions. Cover rele
 - Nothing goes on the plate that isn't meant to be eaten. Every element, icon, stripe, glow, badge, label, border, and gap must carry part of the message. If removing it loses nothing the user needs, remove it.
 - Do not fabricate content or evidence to make a design look finished.
 - Do not use aesthetic work as permission to rewrite product strategy, information architecture, or repository foundations outside the request.
-- Do not add motion without a communication purpose. Respect reduced-motion preferences.
+- Do not add motion without a communication purpose, and never let it compete for attention. Respect reduced-motion preferences.
 - Do not make every surface expressive. Spend character where it helps recognition, orientation, or meaning.
 - Never propose or build anything in [vetoed directions](references/vetoed.md) or the project's vetoed file, including disguised versions. Only the user can lift a veto, by asking for that exact thing in the current brief.
 - When the user rejects a direction, layout, motif, or interaction, record it as a veto before continuing, following the steps in [vetoed directions](references/vetoed.md).

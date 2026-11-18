@@ -104,7 +104,7 @@ Every animation should communicate one of these:
 - Feedback after an action
 - A narrative sequence that depends on timing
 
-Prefer one composed moment over scattered effects. Animate transform and opacity when possible. Avoid continuous motion on information that should be read. Provide a static or instant reduced-motion path that preserves meaning.
+Prefer one composed moment over scattered effects. Animate transform and opacity when possible. Motion should answer the visitor (a scroll, a hover, a click) rather than perform at them, and the flow from one section to the next should feel like a natural next step. Avoid continuous motion on information that should be read. Provide a static or instant reduced-motion path that preserves meaning.
 
 ## Marketing-page checks
 

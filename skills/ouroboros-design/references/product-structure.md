@@ -52,7 +52,9 @@ System announces:
 Recovery:
 ```
 
-Loading placeholders should resemble the final content when that improves stability. Empty states should explain what belongs there and offer the next relevant action. Errors should state what happened, what was preserved, and what the user can do.
+Loading placeholders should resemble the final content when that improves stability. Empty states should say what's missing, what will appear there, and what to do about it, with the action as a clear button where the content would be. A blank screen or a bare "No items" is not an empty state. Errors should state what happened, what was preserved, and what the user can do.
+
+Ask for a permission (location, notifications, contacts, camera) at the moment a feature needs it, so the reason is obvious, never in a burst at launch. When it helps, show a short screen first explaining why and how the data is used. On iOS that screen's only button must be "Continue" or "Next" and must lead straight to the system prompt: no "Allow" wording and no "Not now" or close, or App Review rejects the app under 5.1.1(iv). If the user declines, keep the app usable with an alternative (typing an address instead of sharing location), and offer a Settings link only after they've said no.
 
 ## Forms and settings
 
@@ -101,7 +103,7 @@ Use least privilege, explicit consent, recoverable defaults, and plain descripti
 - Labels, instructions, and errors associated with controls
 - State communicated by more than color
 - Text and control contrast appropriate to their size
-- Comfortable touch targets and no hover-only information
+- Touch targets at least 44×44 pt on Apple platforms and 44×44 CSS px on the web, with space between them. A control that looks small (a text link like "Skip") gets a larger invisible hit area. No hover-only information
 - Reduced-motion behavior
 - Announced asynchronous changes when they matter
 - Modal focus containment, escape behavior, and focus return

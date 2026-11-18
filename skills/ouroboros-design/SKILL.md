@@ -193,7 +193,8 @@ Run this list on the rendered interface, fix what fails, and run it again. Code 
 - [ ] Run `sh scripts/check-patterns.sh <project dir>` from this skill's folder. It flags banned fonts, pills, one-sided borders, tracked uppercase, gradients, shaders, heavy weights, and more than three font sizes. Fix each hit or state why it stays
 - [ ] The plate: justify every element, icon, border, and gap in one sentence, or cut it
 - [ ] Vetoes: compare the render with every entry in the vetoed lists, including disguised versions
-- [ ] One primary action per view, visible on the first screen
+- [ ] One primary action per view, visible on the first screen; red only on destructive actions
+- [ ] Touch targets at least 44×44; empty states explain and offer the next action
 - [ ] States: loading, empty, error, and destructive states render and recover
 - [ ] Access: keyboard, focus, screen reader, reduced motion, and narrow viewports work
 - [ ] Critique pass: answer the step 7 questions; if a template or typical AI-built site could have made this, it fails

@@ -58,7 +58,9 @@ Typography carries much of a page's identity. Define roles deliberately:
 
 - Use a display treatment only where scale or character supports hierarchy.
 - Keep body text readable at real line lengths and viewport sizes.
-- With only three sizes and few heavy weights (see SKILL.md), build hierarchy from color, spacing, position, and case. Regular and medium weights do most of the work.
+- Decide what the eye should land on first (the key number, the headline) and give it the largest size. Secondary details step down in size and color so the screen reads in the right order. With only three sizes and few heavy weights (see SKILL.md), color, spacing, position, and case do the rest.
+- Never shrink text to fit more on a screen. Cut or move content instead. Tiny text makes a product look amateur.
+- In native iOS and macOS apps, use the system font with Dynamic Type text styles, and get character from its widths, layout, and color rather than a custom face. On the web, choose type from the subject.
 - Let width, case, spacing, and line height do work before adding another family.
 - Check italic and decorative faces for clipped glyphs, missing weights, language coverage, and fallback behavior.
 - Use fonts already licensed and available in the product. If a new font is needed, state the source and loading strategy.
@@ -68,6 +70,10 @@ Do not avoid common fonts merely because they are common. Avoid unexamined choic
 ## Color and material
 
 Use color by role. Define background, surface, text, muted text, border, primary action, focus, danger, warning, and success as needed. Keep neutral temperature and saturation coherent unless contrast between zones carries meaning.
+
+Use color sparingly. One accent marks the primary action and the key information; everything else stays neutral. Several competing colors make a screen feel messy. Red means destructive (delete, remove, discard) and nothing else. Cancel and Back are neutral.
+
+Spacing does the grouping. Keep space tight inside a group and wider between groups, and leave a clear margin at the screen edges. If two things need a box or a line to show they belong together, fix the spacing instead.
 
 Shadows, blur, transparency, borders, and texture should describe hierarchy or material. Provide solid, legible fallbacks when transparency or effects fail. Check the design without blur, custom fonts, or ideal imagery. It should remain understandable.
 

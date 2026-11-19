@@ -196,6 +196,7 @@ Run this list on the rendered interface, fix what fails, and run it again. Code 
 - [ ] One primary action per view, visible on the first screen; red only on destructive actions
 - [ ] Touch targets at least 44×44; empty states explain and offer the next action
 - [ ] States: loading, empty, error, and destructive states render and recover
+- [ ] Stable frames: switch every tab, step, and state; no window, panel, or button changes size
 - [ ] Access: keyboard, focus, screen reader, reduced motion, and narrow viewports work
 - [ ] Critique pass: answer the step 7 questions; if a template or typical AI-built site could have made this, it fails
 ```

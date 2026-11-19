@@ -41,6 +41,7 @@ Design around content pressure, not only standard device labels. Test narrow pho
 - Use dynamic viewport units for full-height mobile regions where supported, with a suitable fallback.
 - Keep navigation, dialogs, tables, forms, and calls to action usable at intermediate widths.
 - Reserve media dimensions to prevent layout shift.
+- Size anything that switches content to its largest state. Stack tab panels or steps in one grid cell (`grid-area: 1 / 1`, inactive panels `visibility: hidden` rather than `display: none`) so the box fits the tallest, or give it a fixed size and scroll inside. Reserve room for messages that appear in place, such as field errors and save status. Give changing labels and numbers a stable width (`min-width`, `font-variant-numeric: tabular-nums`). In a native macOS settings window, give every pane the same frame.
 - Test long labels, zoom, localization, and missing content.
 
 ## Motion and performance
@@ -77,6 +78,7 @@ Look for:
 
 - Weak or competing hierarchy
 - Accidental overflow, clipping, wrapping, and layout shift
+- Edges that move: switch every tab and step, trigger loading, error, and success states, and watch the window, panel, and button edges. Any edge that moves is a failure
 - Repeated cards, labels, borders, or section rhythms without meaning
 - Everything `scripts/check-patterns.sh` flags. The script finds candidates; the render decides. A `rounded-full` on a round avatar is fine, a capsule badge is not
 - Every gradient: state in one sentence what it communicates. Remove any that has no answer, and move any text that sits on one onto a solid surface

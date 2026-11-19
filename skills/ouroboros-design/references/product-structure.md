@@ -52,7 +52,7 @@ System announces:
 Recovery:
 ```
 
-Loading placeholders should resemble the final content when that improves stability. Empty states should say what's missing, what will appear there, and what to do about it, with the action as a clear button where the content would be. A blank screen or a bare "No items" is not an empty state. Errors should state what happened, what was preserved, and what the user can do.
+Loading placeholders take the size of the content they stand in for, so nothing moves when it arrives. Empty states should say what's missing, what will appear there, and what to do about it, with the action as a clear button where the content would be. A blank screen or a bare "No items" is not an empty state. Errors should state what happened, what was preserved, and what the user can do.
 
 Ask for a permission (location, notifications, contacts, camera) at the moment a feature needs it, so the reason is obvious, never in a burst at launch. When it helps, show a short screen first explaining why and how the data is used. On iOS that screen's only button must be "Continue" or "Next" and must lead straight to the system prompt: no "Allow" wording and no "Not now" or close, or App Review rejects the app under 5.1.1(iv). If the user declines, keep the app usable with an alternative (typing an address instead of sharing location), and offer a Settings link only after they've said no.
 
@@ -67,6 +67,7 @@ Ask for a permission (location, notifications, contacts, camera) at the moment a
 - Make defaults safe and explain consequential choices before commitment.
 - Require confirmation close to irreversible actions and offer undo when the product can support it.
 - Never build one long scrolling page of options. Group settings into named sections or pages (sidebar navigation, tabs, or steps), keep each view to a small set of related choices, lead with common options, and move rare ones under "Advanced". Long forms become steps with visible progress.
+- Every tab, step, and section in one settings window or dialog shares one size. Switching between them changes the content, never the window.
 
 ## AI interfaces
 

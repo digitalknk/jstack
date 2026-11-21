@@ -190,7 +190,7 @@ Provide enough detail to implement without inventing major decisions. Cover rele
 Run this list on the rendered interface, fix what fails, and run it again. Code checks alone don't count; if you can't render, say so.
 
 ```text
-- [ ] Run `sh scripts/check-patterns.sh <project dir>` from this skill's folder. It flags banned fonts, pills, one-sided borders, tracked uppercase, gradients, shaders, heavy weights, and more than three font sizes. Fix each hit or state why it stays
+- [ ] Run `sh scripts/check-patterns.sh <project dir>` from this skill's folder. It flags banned and default fonts, pills, emoji, one-sided borders, tracked uppercase, gradients, shaders, glass blur, hover lifts, fake window dots, marquees, count-ups, heavy weights, and more than three font sizes. Fix each hit or state why it stays
 - [ ] The plate: justify every element, icon, border, and gap in one sentence, or cut it
 - [ ] Vetoes: compare the render with every entry in the vetoed lists, including disguised versions
 - [ ] One primary action per view, visible on the first screen; red only on destructive actions

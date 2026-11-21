@@ -21,6 +21,13 @@ search() {
 }
 
 search "Banned fonts" "instrument[ _-]?serif|space[ _-]?grotesk"
+search "Default fonts (keep only with a stated reason)" "['\"]inter( var| variable)?['\"]|family=inter|@fontsource(-variable)?/inter|font-family: *inter|[{ ,]inter *[,}(]|font-inter|jetbrains[ _-]?mono|(^|[^a-z])geist"
+search "Emoji and decorative symbols (use words or the product's icon family)" "✨|⚡|🚀|🤖|💎|🔥|🎯|💡|🌈|🧩|✅|⭐|🎉|💜|📈|🟢|→"
+search "Frosted glass (use solid surfaces)" "backdrop-filter|backdrop-blur"
+search "Hover lifts (hover feedback stays a color or underline change)" "hover:-?translate|hover:scale|whileHover|translateY\\(-[0-9.]+(px|rem)\\)"
+search "Fake window chrome" "traffic-?lights?|#ff5f5[67]|#ffbd2e|#febc2e|#27c93f|#28c840"
+search "Marquees and scrolling logo strips" "marquee|logo-?(strip|ticker|wall|cloud)"
+search "Count-up numbers" "count-?up|animate-?number|odometer|data-count(-to)?="
 search "Pills (check each is a true circle, not a capsule)" "rounded-full|border-radius: *(9999|999|50vh|100vh)"
 search "One-sided colored borders" "border-(left|l|s|inline-start)(-[0-9]+)? |border-(left|inline-start): *[0-9.]+(px|rem) +solid"
 search "Uppercase (check for added letter-spacing)" "text-transform: *uppercase|[\"' ]uppercase[\"' ]"

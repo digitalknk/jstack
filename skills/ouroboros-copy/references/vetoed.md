@@ -16,14 +16,15 @@ Project-specific rejections belong in that project's repository, not here.
 ## Lines and wording
 
 - **Phrases that sound good but say nothing.** Every line must tell the reader something they can check or act on. If the user could reasonably ask "what does that mean?", rewrite it. (2026-09-27)
-- **AI writing tells in copy.** Two-beat full-stop headlines ("Write it down. Forget it."), rule-of-three slogans, "That's the whole thing" closers, rhetorical questions, verbless fragments, feelings in place of mechanisms ("when it matters" instead of "reminds you then"), em dashes, curly quotes, middle-dot microcopy, and a clever "honest" voice. Edit every line of copy against these before showing it to the user, as part of writing it, not as a later pass. Good design does not survive bad copy. (2026-10-25)
+- **AI writing tells in copy.** Two-beat full-stop headlines ("Write it down. Forget it."), rule-of-three slogans, "That's the whole thing" closers, "It's not just X, it's Y" reveals, rhetorical questions, verbless fragments, feelings in place of mechanisms ("when it matters" instead of "reminds you then"), em dashes, curly quotes, middle-dot microcopy, "Made with ♥ by" footers, and a clever "honest" voice. Edit every line of copy against these before showing it to the user, as part of writing it, not as a later pass. Good design does not survive bad copy. (2026-10-25, extended 2026-11-21)
+- **Hype words.** Supercharge, 10x, at scale, unprecedented, effortless, agentic, "the future of work", and their relatives. They claim a lot and tell the reader nothing they can check, and they are the stock vocabulary of AI-built pages. Say what the product does and give a fact the reader can verify. (2026-11-21)
 - **Lines and examples the competition already uses.** Headlines, pitches and stock examples that rival products in the same category already use. For todo apps: "out of your head", the dentist appointment, "calm" and "clarity", "you end up building a system instead of using the list", and a "built by one person" section. Look at the category's sites before writing and pick examples from the product's own users and story. Copy that matches a competitor reads as generic, and matching an AI-built competitor reads as AI-built. (2026-10-25, 2026-11-04)
 - **Wordy captions.** Keep explanatory captions on marketing pages to one or two short sentences. (2026-09-27)
 
 ## Sample content and the maker's story
 
 - **Sample content presented as a feature.** When a demo shows something the user created or named, the copy must make clear it is an example, not a built-in part of the product. (2026-09-27)
-- **The default sample names.** Sample people models put in every mockup: Sam, Steve or Steven, Alex, Sarah, Maya, Jordan, Priya, Dana. Use other names in seeded data, alt text and copy, and vary them between projects. Before taking screenshots, check the product's own built-in text (input hints, placeholders, onboarding examples) for these names and hide or change it. (2026-11-04)
+- **The default sample names.** Sample people models put in every mockup: Sam, Steve or Steven, Alex, Sarah, Maya, Jordan, Priya, Dana, Marcus, Elena, Liam, and the surnames Chen, Rivera, and Patel. Use other names in seeded data, alt text and copy, and vary them between projects. Before taking screenshots, check the product's own built-in text (input hints, placeholders, onboarding examples) for these names and hide or change it. (2026-11-04, extended 2026-11-21)
 - **Naming a diagnosis in the maker's story.** Writing a medical or psychological condition (ADHD, anxiety, depression) into public copy, including a maker's story about why the product exists. Make no psychology claims. Describe the experiences people with the condition will recognize instead (if it isn't in front of me I forget it exists; I set up the perfect system and then stopped using the app). People with the condition will recognize those experiences; everyone else won't need the label. (2026-11-05)
 - **An exact start date in the maker's story.** "I started building this on March 4" in an about section or maker note. The date ages and tells the reader nothing. Say "this year" or leave it out. (2026-11-04)
 
@@ -31,6 +32,7 @@ Project-specific rejections belong in that project's repository, not here.
 
 - **Clever microcopy that hides what an action does.** Button labels, menu items, and messages must say what will happen. Wit that makes the reader guess is a defect. (2026-11-17)
 - **Social proof chosen without thought.** Testimonials only from investors and founders make the product look like it's only for them. Pick voices that match the intended audience, and never invent them. (2026-11-17)
+- **Trust claims nobody can back up.** "Trusted by teams at the world's leading companies", "Verified", "SOC 2", uptime percentages, and badges that no real customer list, audit, or measurement supports. Name real customers or certifications and link to the proof, or leave the claim out. (2026-11-21)
 
 ## Adding a veto
 

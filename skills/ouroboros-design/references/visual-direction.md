@@ -34,13 +34,11 @@ These patterns are warnings, not bans. Use one only when the brief gives it a re
 
 - A centered hero over a glow or mesh gradient
 - Three equal feature cards as the main structure
-- Bento grids without meaningful grouping
 - Cream paper, display serif, and earthy accent used as generic premium shorthand
-- Near-black with a neon accent used as generic technology shorthand
-- Glass panels and rounded cards on every surface (pills are vetoed outright)
-- Decorative numbering where order carries no information
+- Near-black with a neon accent used as generic technology shorthand (the purple, indigo, and cyan version is vetoed outright)
+- Rounded cards on every surface (glass panels, bento grids, and pills are vetoed outright)
 - Alternating image and text rows repeated through the page
-- Fake dashboards, terminals, testimonials, metrics, status dots, or version labels
+- Version labels ("v4.2", "now in beta") used as decoration rather than news
 - Gradient text, oversized headlines, or constant animation used as a substitute for hierarchy
 - Key selling points in tiny, faint text ("Free", "Open source", the install command). If it matters, make it impossible to miss.
 - Content behind tabs, carousels, or accordions on a marketing page. Assume visitors see only the first tab. If auto-advancing, start the timer only when the section is fully in view.

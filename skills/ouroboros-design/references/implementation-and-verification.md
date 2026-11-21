@@ -30,7 +30,7 @@ Use one component and token system. Do not mix official design systems or icon f
 
 Models fall back to their favorite fonts without being asked. `scripts/check-patterns.sh` searches code, CSS, font imports, and config for them.
 
-Any match is a failure unless the user named that font in the current brief or the existing brand already uses it. Replace it with a face chosen for the subject, and check what the fallback stack renders.
+A banned-font match is a failure unless the user named that font in the current brief or the existing brand already uses it. A default-font match (Inter, Geist, JetBrains Mono) needs a stated reason to stay. Replace either with a face chosen for the subject, and check what the fallback stack renders.
 
 ## Responsive behavior
 
@@ -82,7 +82,7 @@ Look for:
 - Repeated cards, labels, borders, or section rhythms without meaning
 - Everything `scripts/check-patterns.sh` flags. The script finds candidates; the render decides. A `rounded-full` on a round avatar is fine, a capsule badge is not
 - Every gradient: state in one sentence what it communicates. Remove any that has no answer, and move any text that sits on one onto a solid surface
-- Dot status badges and mood glows, which the script can't reliably find
+- Vetoed patterns the script can't reliably find: dot status badges, mood glows, one word in a different typeface, tinted icon tiles, stat tiles, testimonial cards, a raised pricing plan, and an announcement bar
 - Every shader or WebGL canvas: one per view at most, a stated reason, no text on it, a still frame under reduced motion, paused off screen, a fallback without WebGL, and smooth on a low-end phone
 - Empty areas large enough to notice on their own: oversized section gaps, mostly blank first screens or panels, and small content floating in wide margins
 - Inconsistent spacing, radii, icon style, or action vocabulary

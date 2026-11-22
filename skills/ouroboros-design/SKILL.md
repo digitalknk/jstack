@@ -3,7 +3,7 @@ name: ouroboros-design
 description: Design, redesign, critique, or implement user-facing interfaces with both product judgment and a distinctive visual point of view. Use for websites, landing pages, apps, dashboards, forms, onboarding, design systems, AI interfaces, and other digital products when the work must be useful, accessible, subject-specific, and production-ready. Do not use for purely backend or non-interface code changes.
 license: Apache-2.0 and MIT. See LICENSE.txt
 metadata:
-  version: "1.0.0"
+  version: "1.5.0"
 ---
 
 # Ouroboros design

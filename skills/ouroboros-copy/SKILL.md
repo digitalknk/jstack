@@ -3,7 +3,7 @@ name: ouroboros-copy
 description: Write, edit, or review the words in a user-facing product or site, including headlines, page copy, captions, button labels, microcopy, onboarding text, maker stories, and sample content in mockups. Use alongside ouroboros-design whenever an interface needs words, and on its own for copy-only requests. Not for code comments, commit messages, or internal docs.
 license: MIT
 metadata:
-  version: "1.0.0"
+  version: "1.2.0"
 ---
 
 # Ouroboros copy
